@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://buk1pptjd0yem"]
+
+[ext_resource type="Texture2D" uid="uid://ck8unrnlxtb54" path="res://PNG/summer8/Summer8.png" id="1_6i2wy"]
+[ext_resource type="PackedScene" uid="uid://dywp0ay8t11op" path="res://Scenes/player_1.tscn" id="2_3yoi6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8oyb"]
+size = Vector2(2432.24, 191.229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67jig"]
+size = Vector2(48, 567)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Map" type="StaticBody2D" parent="."]
+
+[node name="FloorCollision" type="CollisionShape2D" parent="Map"]
+position = Vector2(579.2, 604)
+scale = Vector2(0.509982, 0.526234)
+shape = SubResource("RectangleShape2D_g8oyb")
+
+[node name="Background" type="Sprite2D" parent="Map"]
+position = Vector2(570.5, 322)
+scale = Vector2(0.509983, 0.526235)
+texture = ExtResource("1_6i2wy")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Map"]
+position = Vector2(-14, 273.5)
+shape = SubResource("RectangleShape2D_67jig")
+
+[node name="RightWall" type="CollisionShape2D" parent="Map"]
+position = Vector2(1149, 274)
+shape = SubResource("RectangleShape2D_67jig")
+
+[node name="Player1" parent="." instance=ExtResource("2_3yoi6")]
+position = Vector2(173, 457)
+
+[node name="Player2" parent="." instance=ExtResource("2_3yoi6")]
+position = Vector2(976, 458)
